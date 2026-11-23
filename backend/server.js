@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
-  : ["http://localhost:5173", "https://blanco-kitchen.onrender.com"];
+  : ["http://localhost:5173", "https://blanco-n07.onrender.com"];
 
 app.use(
   cors({
