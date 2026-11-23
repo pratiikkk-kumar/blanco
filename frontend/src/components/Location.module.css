@@ -64,8 +64,26 @@
 
 .infoText {
   font-size: 0.9rem;
-  color: #5a4535;
+  color: #3d4a60;
   line-height: 1.7;
+}
+
+.directionsBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  transition: var(--transition);
+}
+
+.directionsBtn:hover {
+  color: var(--amber-light);
+  transform: translateX(4px);
 }
 
 .link {

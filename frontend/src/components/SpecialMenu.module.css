@@ -14,7 +14,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 134, 10, 0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(196, 118, 58, 0.07) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -25,7 +25,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 134, 10, 0.05) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(196, 118, 58, 0.05) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -36,7 +36,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 134, 10, 0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(196, 118, 58, 0.25), transparent);
 }
 
 /* ─── Scroll Reveal ────────────────────────── */
@@ -125,7 +125,7 @@
 /* ─── Card ─────────────────────────────────── */
 .card {
   background: var(--espresso-mid);
-  border: 1px solid rgba(200, 134, 10, 0.14);
+  border: 1px solid rgba(196, 118, 58, 0.14);
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -137,8 +137,8 @@
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(200, 134, 10, 0.3);
-  border-color: rgba(200, 134, 10, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(196, 118, 58, 0.3);
+  border-color: rgba(196, 118, 58, 0.35);
 }
 
 /* ─── Image ────────────────────────────────── */
@@ -206,7 +206,7 @@
   text-transform: uppercase;
   padding: 0.28rem 0.7rem;
   border-radius: 1px;
-  box-shadow: 0 2px 8px rgba(200, 134, 10, 0.45);
+  box-shadow: 0 2px 8px rgba(196, 118, 58, 0.45);
 }
 
 .categoryBadge {
@@ -319,7 +319,7 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.9rem 2.4rem;
-  border: 1px solid rgba(200, 134, 10, 0.5);
+  border: 1px solid rgba(196, 118, 58, 0.5);
   color: var(--amber-light);
   font-family: var(--font-body);
   font-size: 0.72rem;
@@ -336,7 +336,7 @@
   border-color: var(--amber);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(200, 134, 10, 0.4);
+  box-shadow: 0 8px 28px rgba(196, 118, 58, 0.4);
 }
 
 /* ─── Responsive ───────────────────────────── */

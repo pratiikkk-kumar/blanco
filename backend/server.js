@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
-  : ["http://localhost:5173", "https://koh-fee-brew.onrender.com"];
+  : ["http://localhost:5173", "https://blanco-kitchen.onrender.com"];
 
 app.use(
   cors({
@@ -40,12 +40,11 @@ if (fs.existsSync(frontendDist)) {
   app.use(express.static(frontendDist));
 
   // SPA fallback for React Router (must be after /api routes)
-  // SPA fallback for React Router (must be after /api routes)
-  app.get("*", (req, res) => {
+  app.use((req, res) => {
     res.sendFile(path.join(frontendDist, "index.html"));
   });
 }
 
 app.listen(PORT, () => {
-  console.log(`🍵 Koh-Fee Brew backend running at http://localhost:${PORT}`);
+  console.log(`🍽️ Blanco Kitchen & Terrace backend running at http://localhost:${PORT}`);
 });

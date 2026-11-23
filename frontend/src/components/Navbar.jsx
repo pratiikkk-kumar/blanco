@@ -22,10 +22,10 @@ export default function Navbar({ onReserve }) {
       <div className={styles.inner}>
         {/* Logo */}
         <Link to="/" onClick={() => setMenuOpen(false)} className={styles.logo}>
-          <img src="/assets/logo.png" alt="Koh-Fee Brew" className={styles.logoImg} onError={(e) => { e.target.style.display='none'; }} />
+          <img src="/assets/logo.png" alt="Blanco Kitchen & Terrace" className={styles.logoImg} onError={(e) => { e.target.style.display='none'; }} />
           <span className={styles.logoText}>
-            <span className={styles.logoMain}>Koh-Fee Brew</span>
-            <span className={styles.logoSub}>Multi Cuisine Restaurant</span>
+            <span className={styles.logoMain}>Blanco</span>
+            <span className={styles.logoSub}>Kitchen &amp; Terrace</span>
           </span>
         </Link>
 

@@ -23,7 +23,7 @@ export default function GalleryPage() {
         <div className="container">
           <p className="section-label">Aesthetic & Ambiance</p>
           <h1 className="display">Our Gallery</h1>
-          <p className={styles.subtext}>Take a virtual tour of Koh-Fee Brew.</p>
+          <p className={styles.subtext}>Take a virtual tour of Blanco Kitchen &amp; Terrace.</p>
         </div>
       </div>
 

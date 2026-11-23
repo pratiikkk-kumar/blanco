@@ -1,7 +1,7 @@
 {
-  "name": "koh-fee-brew-backend",
+  "name": "blanco-backend",
   "version": "1.0.0",
-  "description": "Koh-Fee Brew restaurant backend API",
+  "description": "Blanco Kitchen & Terrace restaurant backend API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

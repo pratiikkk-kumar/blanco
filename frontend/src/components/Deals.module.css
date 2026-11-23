@@ -1,20 +1,20 @@
 .section {
-  padding: 10rem 0;
-  background-color: #120d0a; /* Very dark espresso/charcoal */
+  padding: 8.5rem 0;
+  background-color: var(--espresso-darker, #0F1724);
   color: var(--white);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(196, 118, 58, 0.15);
 }
 
-/* Ambient Glows */
+/* Ambient Mediterranean Lighting */
 .ambientGlow1 {
   position: absolute;
-  top: -20%;
+  top: -15%;
   left: -10%;
-  width: min(600px, 80vw);
-  height: min(600px, 80vw);
-  background: radial-gradient(circle, rgba(176, 137, 104, 0.15) 0%, rgba(18, 13, 10, 0) 70%);
+  width: min(650px, 85vw);
+  height: min(650px, 85vw);
+  background: radial-gradient(circle, rgba(196, 118, 58, 0.14) 0%, rgba(15, 23, 36, 0) 70%);
   border-radius: 50%;
   z-index: 1;
   pointer-events: none;
@@ -24,458 +24,286 @@
   position: absolute;
   bottom: -20%;
   right: -10%;
-  width: min(800px, 90vw);
-  height: min(800px, 90vw);
-  background: radial-gradient(circle, rgba(206, 172, 142, 0.1) 0%, rgba(18, 13, 10, 0) 70%);
+  width: min(750px, 90vw);
+  height: min(750px, 90vw);
+  background: radial-gradient(circle, rgba(46, 61, 90, 0.35) 0%, rgba(15, 23, 36, 0) 70%);
   border-radius: 50%;
   z-index: 1;
   pointer-events: none;
 }
 
-/* Header Layout */
+/* Greek Architectural Key / Geometric motif overlay */
+.geometricPattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Header */
 .headerLayout {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 5rem;
-  gap: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 2rem;
+  margin-bottom: 4.5rem;
+  gap: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 2.5rem;
+}
+
+.badgeRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.columnIcon {
+  font-size: 0.95rem;
 }
 
 .headerText {
   flex: 1;
 }
 
+.heading {
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  color: var(--white);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--amber-light);
+}
+
 .headerInfo {
   flex: 1;
-  max-width: 450px;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.7;
+  max-width: 460px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.75;
 }
 
-/* Grid Layout */
-.gridContainer {
+/* Experiences 2x2 Grid */
+.experiencesGrid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.leftCol {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.rightCol {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-/* Shared Subheading */
-.subHeading {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--amber);
-  margin: 0 0 1rem 0;
-  font-weight: 500;
-}
-
-/* Ticket Style Card */
-.ticketCard {
-  background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 24px;
+/* Base Experience Card */
+.experienceCard {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 2.75rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.ticketCard::before {
+.experienceCard::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events: none;
-  opacity: 0.5;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(196, 118, 58, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.ticketContent {
-  padding: 3rem;
-  position: relative;
-  z-index: 2;
+.experienceCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 118, 58, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(196, 118, 58, 0.1);
 }
 
-.ticketIcon {
-  color: var(--amber);
-  margin-bottom: 1.5rem;
+.experienceCard:hover::before {
+  opacity: 1;
 }
 
-.ticketTitle {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-  color: var(--white);
-}
-
-.ticketSub {
-  color: rgba(255,255,255,0.6);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-}
-
-.socialLinks {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.socialPill {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-  border-radius: 50px;
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.socialPill img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-.socialPill:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: var(--amber);
-  transform: translateY(-2px);
-}
-
-/* Exclusive Deals Glass Card */
-.dealsWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.dealNote {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 1.5rem;
-}
-
-.glassCard {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: border-color 0.3s ease;
-}
-
-.glassCard:hover {
-  border-color: rgba(176, 137, 104, 0.3); /* amber glow */
-}
-
-.dealRow {
+/* Card Header */
+.cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  margin-bottom: 1.75rem;
 }
 
-.dealText h4 {
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem 0;
-  color: var(--white);
-}
-
-.dealText p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.5;
-}
-
-.discountBadge {
-  background: rgba(176, 137, 104, 0.15);
-  border: 1px solid var(--amber);
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(196, 118, 58, 0.12);
+  border: 1px solid rgba(196, 118, 58, 0.25);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--amber);
-  flex-shrink: 0;
+  color: var(--amber-light);
+  transition: transform 0.35s ease, background 0.35s ease;
 }
 
-.discountNum {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
+.experienceCard:hover .iconCircle {
+  transform: scale(1.08);
+  background: rgba(196, 118, 58, 0.2);
 }
 
-.discountText {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+.tagPill {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-light);
+  background: rgba(196, 118, 58, 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  border: 1px solid rgba(196, 118, 58, 0.2);
 }
 
-/* Celebration Card */
-.celebrationCard {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  padding: 3.5rem;
-}
-
-.celebrationBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(22, 28, 24, 0.8) 0%, rgba(18, 13, 10, 0.95) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.2); /* subtle green tint */
-  border-radius: 24px;
-}
-
-.celebrationContent {
-  position: relative;
-  z-index: 2;
-}
-
-.celebrationContent h3 {
+.cardTitle {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: #a7f3d0; /* Soft mint green */
-  margin: 0 0 1rem 0;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.cardDescription {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 1.25rem;
+}
+
+.perkNote {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--amber-light);
   font-weight: 500;
 }
 
-.celebrationContent p {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-  margin: 0 0 1rem 0;
+/* Featured Celebration Card Styling */
+.celebrationCard {
+  background: linear-gradient(145deg, rgba(30, 44, 70, 0.5) 0%, rgba(15, 23, 36, 0.6) 100%);
+  border: 1px solid rgba(196, 118, 58, 0.25);
 }
 
-.celebrationHighlight {
-  color: var(--white) !important;
-  font-weight: 500;
-  margin-bottom: 2.5rem !important;
+.celebrationActions {
+  margin-top: auto;
 }
 
-.whatsappBtn {
+.terraceCtaBtn {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  background: #10b981;
-  color: #064e3b;
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--amber);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
   font-weight: 600;
-  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 8px 24px rgba(196, 118, 58, 0.3);
 }
 
-.whatsappBtn:hover {
-  background: #059669;
-  color: white;
+.terraceCtaBtn:hover {
+  background: var(--amber-light);
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 12px 30px rgba(196, 118, 58, 0.45);
 }
 
-.btnIcon {
-  display: flex;
+/* Instagram Action Badge */
+.socialActionRow {
+  margin-top: auto;
+}
+
+.instagramBadge {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-}
-
-/* Functions */
-.functionsWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.functionsHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-}
-
-.textLink {
-  color: var(--amber);
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: opacity 0.3s ease;
-}
-
-.textLink:hover {
-  opacity: 0.7;
-}
-
-.functionCardsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.glassCardHover {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glassCardHover:hover {
+  gap: 0.65rem;
+  padding: 0.75rem 1.4rem;
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255,255,255,0.15);
-  transform: translateY(-4px);
-}
-
-.funcIconWrapper {
-  color: var(--amber);
-  margin-bottom: 1.5rem;
-  background: rgba(176, 137, 104, 0.1);
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-}
-
-.glassCardHover h4 {
-  font-size: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
   color: var(--white);
-  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.glassCardHover p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
-  margin: 0;
-  line-height: 1.6;
+.instagramBadge:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--amber);
+  color: var(--amber-light);
+  transform: translateY(-2px);
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .gridContainer {
+@media (max-width: 960px) {
+  .experiencesGrid {
     grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
+
   .headerLayout {
     flex-direction: column;
     align-items: flex-start;
-  }
-}
-
-@media (max-width: 768px) {
-  .section { padding: 7rem 0; }
-
-  .functionCardsGrid {
-    grid-template-columns: 1fr;
-  }
-  .dealRow {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .celebrationCard {
-    padding: 2rem;
-  }
-  .headerText h2 {
-    font-size: 2.5rem !important;
-  }
-
-  .ticketContent {
-    padding: 2rem;
-  }
-
-  .whatsappBtn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Functions header: stack heading above link */
-  .functionsHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .subHeading {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section { padding: 5rem 0; }
-
-  .headerLayout {
-    margin-bottom: 3rem;
+    gap: 1.5rem;
   }
 
   .headerInfo {
-    font-size: 0.95rem;
+    max-width: 100%;
   }
 
-  .socialLinks {
-    flex-direction: column;
+  .experienceCard {
+    padding: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 5.5rem 0;
   }
 
-  .socialPill {
+  .experienceCard {
+    padding: 1.75rem;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .terraceCtaBtn {
     width: 100%;
     justify-content: center;
   }
 
-  .celebrationContent h3 {
-    font-size: 1.75rem;
-  }
-
-  .ticketTitle {
-    font-size: 1.4rem;
-  }
-
-  .glassCardHover {
-    padding: 1.5rem;
-  }
-
-  .glassCard {
-    padding: 1.25rem;
-  }
-
-  .discountBadge {
-    width: 64px;
-    height: 64px;
-  }
-
-  .discountNum {
-    font-size: 1.2rem;
-  }
-
-  .subHeading {
-    font-size: 1.4rem;
+  .instagramBadge {
+    width: 100%;
+    justify-content: center;
   }
 }

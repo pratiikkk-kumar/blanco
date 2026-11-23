@@ -19,6 +19,12 @@ export default function MenuPage() {
   }, []);
 
   const categories = ['Starter', 'Main Course', 'Dessert', 'Beverages'];
+  const categoryLabels = {
+    'Starter': 'Starters',
+    'Main Course': 'Main Course',
+    'Dessert': 'Desserts',
+    'Beverages': 'Beverages',
+  };
 
   if (loading) {
     return <div className={styles.loading}>Loading Menu...</div>;
@@ -42,7 +48,9 @@ export default function MenuPage() {
 
             return (
               <div key={category} className={styles.categorySection}>
-                <h2 className={`display ${styles.categoryTitle}`}>{category}s</h2>
+                <h2 className={`display ${styles.categoryTitle}`}>
+                  {categoryLabels[category] || category}
+                </h2>
                 <div className={styles.grid}>
                   {items.map((item) => (
                     <div key={item.id} className={styles.itemCard}>

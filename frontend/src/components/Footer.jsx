@@ -12,8 +12,8 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
-              <span className={styles.logoMain}>Koh-Fee Brew</span>
-              <span className={styles.logoSub}>Multi Cuisine Restaurant</span>
+              <span className={styles.logoMain}>Blanco</span>
+              <span className={styles.logoSub}>Kitchen &amp; Terrace</span>
             </Link>
             <p className={styles.bio}>
               Where every plate tells a story &amp; every sip becomes a memory.
@@ -23,7 +23,7 @@ export default function Footer() {
             {/* Social links */}
             <div className={styles.socials}>
               <a
-                href="https://www.instagram.com/koh.feee"
+                href="https://www.instagram.com/blanco.bhubaneswar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
@@ -34,16 +34,6 @@ export default function Footer() {
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <circle cx="12" cy="12" r="4"/>
                   <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
-                </svg>
-              </a>
-              <a
-                href="#"
-                className={styles.socialIcon}
-                aria-label="Facebook"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
               </a>
               <a
@@ -76,16 +66,14 @@ export default function Footer() {
             <h4 className={styles.title}>Contact</h4>
             <nav className={styles.nav}>
               <a href="tel:+910000000000">+91 00000 00000</a>
-              <a href="mailto:hello@kohfeebrew.com">hello@kohfeebrew.com</a>
-              <span>PLOT NO A/62, Saheed Nagar,<br />Bhubaneswar, Odisha 751007</span>
+              <span>Above Zudio, Hotel Vavi Grand,<br />Rupali Square, Saheed Nagar,<br />Bhubaneswar, Odisha 751007</span>
             </nav>
           </div>
         </div>
 
         {/* ── Bottom Bar ── */}
         <div className={styles.bottom}>
-          <p>&copy; {new Date().getFullYear()} Koh-Fee Brew. All rights reserved.</p>
-          <Link to="/admin" className={styles.staffLink}>Staff Portal</Link>
+          <p>&copy; {new Date().getFullYear()} Blanco Kitchen &amp; Terrace. All rights reserved.</p>
         </div>
       </div>
     </footer>

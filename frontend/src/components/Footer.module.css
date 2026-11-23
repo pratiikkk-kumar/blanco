@@ -4,7 +4,7 @@
   color: var(--white);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(200, 134, 10, 0.2);
+  border-top: 1px solid rgba(196, 118, 58, 0.2);
 }
 
 /* Subtle ambient glow top-left */
@@ -16,7 +16,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 134, 10, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(196, 118, 58, 0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -91,7 +91,7 @@
 .socialIcon:hover {
   border-color: var(--amber);
   color: var(--amber-light);
-  background: rgba(200, 134, 10, 0.1);
+  background: rgba(196, 118, 58, 0.1);
 }
 
 /* ─── Link Columns ─────────────────────────── */
@@ -109,7 +109,7 @@
   color: var(--amber);
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(200, 134, 10, 0.2);
+  border-bottom: 1px solid rgba(196, 118, 58, 0.2);
 }
 
 .nav {
@@ -144,12 +144,13 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   padding: 1.5rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.25);
+  text-align: center;
 }
 
 .bottomLeft {

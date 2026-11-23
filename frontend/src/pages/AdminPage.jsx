@@ -3,7 +3,7 @@ import styles from "./AdminPage.module.css";
 
 // ── Simple PIN gate ───────────────────────────────────────────────────────────
 const ADMIN_PIN = import.meta.env.VITE_ADMIN_PIN ?? "1234";
-const SESSION_KEY = "kfb_admin_auth";
+const SESSION_KEY = "blanco_admin_auth";
 
 function PinGate({ onUnlock }) {
   const [pin, setPin] = useState("");
@@ -333,7 +333,7 @@ function AdminDashboard() {
           )}
           {fetchState === "ok" && filtered.length === 0 && (
             <div className={styles.stateMsg}>
-              <div className={styles.emptyIcon}>☕</div>
+              <div className={styles.emptyIcon}>🍽️</div>
               <p className={styles.emptyText}>No reservations found.</p>
               {(filter !== "all" || search) && <button className={styles.retryBtn} onClick={() => { setFilter("all"); setSearch(""); }}>Clear filters</button>}
             </div>
@@ -370,7 +370,7 @@ function AdminDashboard() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" /></svg>
             Back to site
           </a>
-          <span className={styles.footNote}>Koh-Fee Brew · Admin Panel · {new Date().getFullYear()}</span>
+          <span className={styles.footNote}>Blanco Kitchen &amp; Terrace · Admin Panel · {new Date().getFullYear()}</span>
         </footer>
       </div>
 

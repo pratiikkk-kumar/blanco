@@ -9,7 +9,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(34, 24, 17, 0.97);
+  background: rgba(15, 23, 36, 0.97);
   backdrop-filter: blur(12px);
   padding: 0.85rem 0;
   box-shadow: 0 2px 24px rgba(0,0,0,0.3);
@@ -33,7 +33,7 @@
 }
 
 .logoImg {
-  height: 38px;
+  height: 48px;
   width: auto;
 }
 
@@ -136,7 +136,7 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 0 2rem;
-  background: rgba(34, 24, 17, 0.98);
+  background: rgba(15, 23, 36, 0.98);
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -181,7 +181,7 @@
     flex-direction: column;
     gap: 0.5rem;
     padding: 0 1.25rem;
-    background: rgba(34, 24, 17, 0.98);
+    background: rgba(15, 23, 36, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     max-height: 0;

@@ -1,27 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
 
 /* ───────────────────────────────────────────
-   DESIGN TOKENS
+   DESIGN TOKENS — Blanco Kitchen & Terrace
+   Navy-blue palette with terracotta accent
 ─────────────────────────────────────────── */
 :root {
-  --cream: #FAF8F5;
-  --espresso: #221811;
-  --espresso-mid: #2e1f14;
-  --espresso-light: #3d2a1a;
-  --espresso-darker: #160d07;
-  --amber: #C8860A;
-  --amber-light: #E8A020;
-  --amber-pale: #f0c060;
-  --amber-dim: rgba(200, 134, 10, 0.15);
+  --cream: #F5F4F0;
+  --espresso: #1A2235;
+  --espresso-mid: #233047;
+  --espresso-light: #2E3D5A;
+  --espresso-darker: #0F1724;
+  --amber: #C4763A;
+  --amber-light: #D98A4A;
+  --amber-pale: #E8A97A;
+  --amber-dim: rgba(196, 118, 58, 0.15);
   --white: #FFFFFF;
-  --text-muted: #8a7060;
-  --border: rgba(200, 134, 10, 0.18);
+  --text-muted: #6B7A95;
+  --border: rgba(196, 118, 58, 0.18);
   --border-subtle: rgba(255, 255, 255, 0.07);
-  --shadow: 0 8px 40px rgba(34, 24, 17, 0.18);
-  --shadow-amber: 0 8px 30px rgba(200, 134, 10, 0.35);
+  --shadow: 0 8px 40px rgba(15, 23, 36, 0.22);
+  --shadow-amber: 0 8px 30px rgba(196, 118, 58, 0.35);
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-body: 'Jost', sans-serif;
 
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --radius: 4px;

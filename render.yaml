@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: blanco-kitchen-terrace
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: VITE_ADMIN_PIN
+        sync: false   # set this in Render dashboard → Environment
+

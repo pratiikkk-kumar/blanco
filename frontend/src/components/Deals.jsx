@@ -5,119 +5,140 @@ export default function Deals() {
   const reveal = useScrollReveal();
 
   return (
-    <section className={styles.section}>
-      {/* Decorative Ambient Glows */}
-      <div className={styles.ambientGlow1}></div>
-      <div className={styles.ambientGlow2}></div>
+    <section id="experiences" className={styles.section}>
+      {/* Decorative Mediterranean architectural ambiance */}
+      <div className={styles.ambientGlow1} aria-hidden />
+      <div className={styles.ambientGlow2} aria-hidden />
+      <div className={styles.geometricPattern} aria-hidden />
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         
+        {/* Section Header */}
         <div className={styles.headerLayout}>
           <div className={`reveal ${styles.headerText}`} ref={reveal}>
-            <p className="section-label" style={{ color: 'var(--amber)' }}>Insider Perks</p>
-            <h2 className="display" style={{ color: 'var(--white)', fontSize: '3.5rem' }}>Exclusive<br/>Experiences</h2>
+            <div className={styles.badgeRow}>
+              <span className={styles.columnIcon}>🏛️</span>
+              <p className="section-label">Terrace Life &amp; Curated Moments</p>
+            </div>
+            <h2 className={`display ${styles.heading}`}>
+              Exclusive<br />
+              <em>Experiences</em>
+            </h2>
           </div>
           <div className={`reveal reveal-delay-1 ${styles.headerInfo}`} ref={reveal}>
-            <p>From private celebrations to everyday rewards, discover how we make your time at Koh-Fee Brew even more memorable.</p>
+            <p>
+              From sunset terrace aperitivos to unforgettable starlit celebrations, immerse yourself in the Mediterranean warmth of Blanco Kitchen &amp; Terrace.
+            </p>
           </div>
         </div>
 
-        <div className={styles.gridContainer}>
+        {/* Feature Grid */}
+        <div className={styles.experiencesGrid}>
           
-          {/* LEFT COLUMN */}
-          <div className={styles.leftCol}>
-            
-            {/* Follow & Save - Premium Ticket Style */}
-            <div className={`reveal ${styles.ticketCard}`} ref={reveal}>
-              <div className={styles.ticketContent}>
-                <div className={styles.ticketIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
-                  </svg>
-                </div>
-                <h3 className={styles.ticketTitle}>Follow & Save 5%</h3>
-                <p className={styles.ticketSub}>Show your follow on Instagram or Facebook at checkout to instantly receive 5% off your entire order.</p>
-                <div className={styles.socialLinks}>
-                  <a href="https://www.instagram.com/koh.feee" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
-                    <img src="/assets/insta-icon.svg" alt="Instagram" />
-                    @koh.feee
-                  </a>
-                  <a href="#" className={styles.socialPill}>
-                    <img src="/assets/fb-icon.svg" alt="Facebook" />
-                    Koh-fee Brew
-                  </a>
-                </div>
+          {/* Card 1: Rooftop Sundowners */}
+          <div className={`reveal ${styles.experienceCard} ${styles.sundownerCard}`} ref={reveal}>
+            <div className={styles.cardHeader}>
+              <div className={styles.iconCircle}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="4"/>
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                </svg>
               </div>
+              <span className={styles.tagPill}>Golden Hour</span>
             </div>
-
-            {/* Exclusive Deals */}
-            <div className={`reveal reveal-delay-1 ${styles.dealsWrapper}`} ref={reveal}>
-              <h3 className={styles.subHeading}>In-House Offers</h3>
-              <p className={styles.dealNote}>Only one offer valid per visit.</p>
-              
-              <div className={styles.glassCard}>
-                <div className={styles.dealRow}>
-                  <div className={styles.dealText}>
-                    <h4>Students & Corporates</h4>
-                    <p>Enjoy 10% off on bills above ₹2,000 for students and corporate guests.</p>
-                  </div>
-                  <div className={styles.discountBadge}>
-                    <span className={styles.discountNum}>10%</span>
-                    <span className={styles.discountText}>OFF</span>
-                  </div>
-                </div>
-              </div>
+            <h3 className={styles.cardTitle}>Sunset Aperitivo Hours</h3>
+            <p className={styles.cardDescription}>
+              Watch the evening unfold above the city. Enjoy handcrafted mocktails, artisanal mezze, and small plates paired with relaxed open-air rooftop breeze from 4:30 PM to 7:00 PM.
+            </p>
+            <div className={styles.cardFooter}>
+              <span className={styles.perkNote}>✦ Daily on the Open Terrace</span>
             </div>
-
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className={styles.rightCol}>
-            
-            {/* Celebration Banner */}
-            <div className={`reveal reveal-delay-2 ${styles.celebrationCard}`} ref={reveal}>
-              <div className={styles.celebrationBg}></div>
-              <div className={styles.celebrationContent}>
-                <h3>Celebrating something special?</h3>
-                <p>Birthdays, anniversaries, graduations, or just a good excuse for cake.</p>
-                <p className={styles.celebrationHighlight}>Text us on WhatsApp and we'll set you up with special offers to make the day truly memorable.</p>
-                
-                <a href="#" className={styles.whatsappBtn}>
-                  <span className={styles.btnIcon}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                  </span>
-                  Message Us
-                </a>
+          {/* Card 2: Private Rooftop Celebrations */}
+          <div className={`reveal reveal-delay-1 ${styles.experienceCard} ${styles.celebrationCard}`} ref={reveal}>
+            <div className={styles.cardHeader}>
+              <div className={styles.iconCircle}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
               </div>
+              <span className={styles.tagPill}>Private Dining</span>
             </div>
-
-            {/* Functions Section */}
-            <div className={`reveal reveal-delay-3 ${styles.functionsWrapper}`} ref={reveal}>
-              <div className={styles.functionsHeader}>
-                <h3 className={styles.subHeading}>A Favourite for Functions</h3>
-                <a href="#" className={styles.textLink}>Reserve for groups &rarr;</a>
-              </div>
-              
-              <div className={styles.functionCardsGrid}>
-                <div className={styles.glassCardHover}>
-                  <div className={styles.funcIconWrapper}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                  </div>
-                  <h4>Loved by Students</h4>
-                  <p>A hangout for college groups — great coffee, seating, and space to just be.</p>
-                </div>
-                
-                <div className={styles.glassCardHover}>
-                  <div className={styles.funcIconWrapper}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                  </div>
-                  <h4>Trusted by Corporates</h4>
-                  <p>Teams choose us for offsites and functions — reliable service at scale.</p>
-                </div>
-              </div>
+            <h3 className={styles.cardTitle}>Celebrations Under the Stars</h3>
+            <p className={styles.cardDescription}>
+              Birthdays, anniversaries, intimate proposals, and family milestones. Let our team arrange bespoke floral decor, personalized menus, and our signature celebratory desserts.
+            </p>
+            <div className={styles.celebrationActions}>
+              <a
+                href="https://wa.me/910000000000?text=Hi%20Blanco!%20I%20would%20like%20to%20plan%20a%20celebration%20on%20the%20terrace."
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.terraceCtaBtn}
+              >
+                <span>Curate Your Celebration</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
-
           </div>
+
+          {/* Card 3: Large Groups & Corporate Soirées */}
+          <div className={`reveal reveal-delay-2 ${styles.experienceCard}`} ref={reveal}>
+            <div className={styles.cardHeader}>
+              <div className={styles.iconCircle}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <span className={styles.tagPill}>Gatherings</span>
+            </div>
+            <h3 className={styles.cardTitle}>Terrace Socials &amp; Group Banquets</h3>
+            <p className={styles.cardDescription}>
+              Spacious multi-level seating tailored for corporate team offsites, reunion dinners, and festive gatherings with specialized group dining packages and seamless hospitality.
+            </p>
+            <div className={styles.cardFooter}>
+              <span className={styles.perkNote}>✦ Dedicated event host &amp; customized menus</span>
+            </div>
+          </div>
+
+          {/* Card 4: Blanco Circle / Social Privilege */}
+          <div className={`reveal reveal-delay-3 ${styles.experienceCard} ${styles.circleCard}`} ref={reveal}>
+            <div className={styles.cardHeader}>
+              <div className={styles.iconCircle}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <span className={styles.tagPill}>Insider Club</span>
+            </div>
+            <h3 className={styles.cardTitle}>Join the Blanco Circle</h3>
+            <p className={styles.cardDescription}>
+              Tag us in your terrace reels &amp; stories, or follow our journey on Instagram. Show your check-in to our host for an exclusive seasonal dessert or chef's tasting perk.
+            </p>
+            <div className={styles.socialActionRow}>
+              <a
+                href="https://www.instagram.com/blanco.bhubaneswar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.instagramBadge}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                <span>@blanco.bhubaneswar</span>
+              </a>
+            </div>
+          </div>
+
         </div>
 
       </div>

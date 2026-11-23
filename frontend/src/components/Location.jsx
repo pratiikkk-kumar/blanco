@@ -5,9 +5,9 @@ export default function Location() {
   const reveal = useScrollReveal();
 
   const hours = [
-    { day: 'Monday – Thursday', time: '10:00 AM – 10:30 PM' },
-    { day: 'Friday – Saturday', time: '10:00 AM – 11:30 PM' },
-    { day: 'Sunday', time: '10:00 AM – 10:00 PM' },
+    { day: 'Monday – Thursday', time: '12:00 PM – 11:30 PM' },
+    { day: 'Friday – Saturday', time: '12:00 PM – 01:00 AM' },
+    { day: 'Sunday', time: '12:00 PM – 12:00 AM' },
   ];
 
   return (
@@ -32,10 +32,18 @@ export default function Location() {
                 <span className={styles.infoTitle}>Address</span>
               </div>
               <p className={styles.infoText}>
-                Koh-Fee Brew, Multi Cuisine Restaurant<br />
-                PLOT NO A/62, Saheed Nagar,<br />
-                Bhubaneswar, Odisha 751007
+                Blanco Kitchen &amp; Terrace<br />
+                Above Zudio, Hotel Vavi Grand, Rupali Square,<br />
+                Saheed Nagar, Bhubaneswar, Odisha 751007
               </p>
+              <a
+                href="https://maps.app.goo.gl/ebGXBZjeLAMyV985A"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.directionsBtn}
+              >
+                <span>Open in Google Maps &rarr;</span>
+              </a>
             </div>
 
             <div className={`reveal reveal-delay-1 ${styles.infoBlock}`} ref={reveal}>
@@ -73,8 +81,8 @@ export default function Location() {
           {/* Map */}
           <div className={`reveal ${styles.mapWrap}`} ref={reveal}>
             <iframe
-              title="Koh-Fee Brew Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.054534!2d85.844!3d20.2759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19090e2b578b0d%3A0x23c36aaaa6b1de7!2sKoh-Fee+Brew!5e0!3m2!1sen!2sin!4v1698000000000!5m2!1sen!2sin"
+              title="Blanco Kitchen &amp; Terrace Location"
+              src="https://maps.google.com/maps?q=Blanco+Kitchen+%26+Terrace+Bhubaneswar&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -83,7 +91,7 @@ export default function Location() {
               referrerPolicy="no-referrer-when-downgrade"
             />
             <div className={styles.mapOverlayBadge}>
-              <span>📍 Koh-Fee Brew</span>
+              <span>📍 Blanco Kitchen &amp; Terrace</span>
             </div>
           </div>
         </div>

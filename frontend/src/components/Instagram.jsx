@@ -19,10 +19,10 @@ export default function Instagram() {
         <div className={styles.header}>
           <p className={`section-label reveal ${styles.label}`} ref={reveal}>Follow Along</p>
           <h2 className={`display reveal reveal-delay-1 ${styles.heading}`} ref={reveal}>
-            @koh.feee
+            @blanco.bhubaneswar
           </h2>
           <p className={`reveal reveal-delay-2 ${styles.subtext}`} ref={reveal}>
-            Tag us in your moments — we love seeing Koh-Fee Brew through your eyes.
+            Tag us in your moments — we love seeing Blanco through your eyes.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export default function Instagram() {
           {posts.map((post, i) => (
             <a
               key={post.id}
-              href="https://www.instagram.com/koh.feee"
+              href="https://www.instagram.com/blanco.bhubaneswar/"
               target="_blank"
               rel="noopener noreferrer"
               className={`reveal reveal-delay-${(i % 4) + 1} ${styles.post}`}
@@ -55,7 +55,7 @@ export default function Instagram() {
         {/* Follow CTA */}
         <div className={`reveal ${styles.cta}`} ref={reveal}>
           <a
-            href="https://www.instagram.com/koh.feee"
+            href="https://www.instagram.com/blanco.bhubaneswar/"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn btn-outline-dark ${styles.followBtn}`}

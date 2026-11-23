@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 
 export default function Hero({ onReserve }) {
@@ -6,16 +5,6 @@ export default function Hero({ onReserve }) {
     const el = document.querySelector('#menu');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const titleRef = useRef(null);
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (contentRef.current) contentRef.current.classList.add(styles.loaded);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <section id="hero" className={styles.hero}>
@@ -32,7 +21,7 @@ export default function Hero({ onReserve }) {
       <div className={styles.orb2} />
 
       {/* Content */}
-      <div className={`${styles.content} ${styles.content}`} ref={contentRef}>
+      <div className={styles.content}>
 
         {/* Eyebrow label */}
         <div className={styles.eyebrow}>
@@ -42,10 +31,10 @@ export default function Hero({ onReserve }) {
         </div>
 
         {/* Main title */}
-        <h1 className={styles.title} ref={titleRef}>
-          <span className={styles.titleWordA}>Koh‑Fee</span>
+        <h1 className={styles.title}>
+          <span className={styles.titleWordA}>Blanco</span>
           <span className={styles.titleWordB}>
-            <em>Brew</em>
+            <em>Kitchen &amp; Terrace</em>
           </span>
         </h1>
 
@@ -70,18 +59,18 @@ export default function Hero({ onReserve }) {
         {/* Stats bar */}
         <div className={styles.statsBar}>
           <div className={styles.stat}>
-            <span className={styles.statNum}>200<sup>+</sup></span>
-            <span className={styles.statLabel}>Menu Items</span>
+            <span className={styles.statNum}>Rooftop</span>
+            <span className={styles.statLabel}>Open Terrace</span>
           </div>
           <div className={styles.divider} />
           <div className={styles.stat}>
-            <span className={styles.statNum}>2</span>
-            <span className={styles.statLabel}>Floors</span>
+            <span className={styles.statNum}>Kitchen</span>
+            <span className={styles.statLabel}>Multi Cuisine</span>
           </div>
           <div className={styles.divider} />
           <div className={styles.stat}>
-            <span className={styles.statNum}>4.8</span>
-            <span className={styles.statLabel}>★ Rating</span>
+            <span className={styles.statNum}>4.3 ★</span>
+            <span className={styles.statLabel}>Google Rating</span>
           </div>
         </div>
       </div>
